@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jayasiri / Dantha</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #3b1d5a, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Falling stars */
+.star {
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(transparent, white);
+  animation: fall linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+.container {
+  z-index: 2;
+  animation: fadeIn 2.5s ease;
+}
+
+.family {
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
+  color: gold;
+  animation: glow 3s infinite alternate;
+}
+
+.msg {
+  font-size: 20px;
+  line-height: 1.7;
+  margin-top: 20px;
+  animation: slideUp 2s ease;
+}
+
+.year {
+  margin-top: 25px;
+  font-size: 42px;
+  color: #ffd700;
+  animation: sparkle 2.5s infinite;
+}
+
+.footer {
+  margin-top: 30px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+}
+
+@keyframes fadeIn {
+  from {opacity:0}
+  to {opacity:1}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(40px); opacity:0}
+  to {transform: translateY(0); opacity:1}
+}
+
+@keyframes glow {
+  from {text-shadow: 0 0 10px gold}
+  to {text-shadow: 0 0 25px #fff176}
+}
+
+@keyframes sparkle {
+  0% {text-shadow: 0 0 5px gold}
+  50% {text-shadow: 0 0 20px #fff}
+  100% {text-shadow: 0 0 5px gold}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Soft background music -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3b6f92df37.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <div class="family">Jayasiri / Dantha</div>
+
+  <div class="msg">
+    Sending you my warm wishes<br>
+    from home to home and<br>
+    from heart to heart
+  </div>
+
+  <div class="year">Happy New Year 2026</div>
+
+  <div class="footer">Jayasiri / Dantha</div>
+</div>
+
+<script>
+for (let i = 0; i < 40; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  star.style.left = Math.random() * 100 + 'vw';
+  star.style.animationDuration = (2 + Math.random() * 3) + 's';
+  star.style.opacity = Math.random();
+  document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
